@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-container h1 {
+    margin: 5px 10px;
+}
+
+.navbar-links {
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-links li {
+    margin: 0 25px;
+    list-style: none;
+    font-weight: 700;
+}
+
+.checkout-icons {
+    display: flex;
+    list-style: none;
+    margin-right: 50px;
+}
+
+.checkout-icons li {
+    padding-left: 15px;
+}
+
+.search-input {
+    max-width: 140px;
+    border-radius: 25px;
+    font-size: 1em;
+    border: 2px rgb(239, 235, 235) solid;
+    background-color: rgb(239, 235, 235);
+    outline: none;
+    padding: 2px 10px;
+}
+
+.sub-nav {
+    display: flex;
+}
+
+.search-icon {
+    color: rgb(109, 107, 107);
+    border-radius: 25px;
+    font-size: 19px;
+    margin-right: 2px;
+}
+.search-section {
+    margin-top: 15px;
+}

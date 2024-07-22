@@ -6,7 +6,7 @@ function ProductDisplay() {
       ProductDisplay
       <div>
         {/* Card componenet */}
-        <h1>Product Name</h1>
+        <p>Product Name</p>
         <p>Product Description</p>
         <p>Product Price</p>
       </div>
