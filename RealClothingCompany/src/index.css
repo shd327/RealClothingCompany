@@ -64,18 +64,16 @@ body {
 }
 
 .sidebar-container {
-       max-width: 300px; 
+    min-width: 500px;
 }
 
 .sidebar-container ul {
-  
     display: flex;
     flex-direction: column;
-    
 }
 
 .sidebar-container li {
-        margin: 30px 0px; 
+    margin: 30px 0px;
     font-weight: 600;
     list-style: none;
 }
@@ -84,4 +82,27 @@ body {
     border: 1px solid rgb(201, 199, 199);
     max-width: 140px;
     margin: 30px;
+}
+
+.main {
+    display: flex;
+}
+
+.display-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: space-around;
+    flex-basis: 25%;
+    margin-top: 100px;
+}
+
+.card {
+    min-width: 25%;
+    margin: 20px;
+}
+
+.filler-image {
+    width: 200px;
 }
