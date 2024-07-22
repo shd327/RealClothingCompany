@@ -6,6 +6,7 @@ body {
 .navbar-container {
     display: flex;
     justify-content: space-between;
+    margin-top: 15px;
 }
 
 .navbar-container h1 {
@@ -16,12 +17,22 @@ body {
 .navbar-links {
     display: flex;
     justify-content: center;
+    cursor: pointer;
 }
 
 .navbar-links li {
     margin: 0 25px;
     list-style: none;
     font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.navbar-links hr {
+    border: none;
+    width: 80%;
+    height: 3px;
+    border-radius: 10px;
+    background-color: rgb(109, 107, 107);
 }
 
 .checkout-icons {
@@ -105,4 +116,17 @@ body {
 
 .filler-image {
     width: 200px;
+}
+.nav-cart-counter {
+    width: 16px;
+    height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -10px;
+    margin-left: -8px;
+    border-radius: 11px;
+    font-size: 12px;
+    background-color: red;
+    color: white;
 }
