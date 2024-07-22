@@ -20,7 +20,10 @@ function Navbar() {
                 </ul>
                 <div className="sub-nav">
                     <div className="search-section">
-                        <FontAwesomeIcon icon={faMagnifyingGlass} className="search-icon" />
+                        <FontAwesomeIcon
+                            icon={faMagnifyingGlass}
+                            className="search-icon"
+                        />
                         <input
                             type="text"
                             className="search-input"
@@ -29,14 +32,15 @@ function Navbar() {
                     </div>
                     <ul className="checkout-icons">
                         <li>
-                            <FontAwesomeIcon icon={faCartShopping} size="lg" />
+                            <FontAwesomeIcon icon={faHeart} size="lg" />
                         </li>
                         <li>
-                            <FontAwesomeIcon icon={faHeart} size="lg"  />
+                            <FontAwesomeIcon icon={faCartShopping} size="lg" />
                         </li>
                     </ul>
                 </div>
             </div>
+            <div className="decorative"></div>
         </>
     );
 }
