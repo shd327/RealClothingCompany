@@ -1,9 +1,21 @@
-import React from 'react'
+import React from "react";
 
-const Card = () => {
+function Card(props) {
   return (
-    <div>Card</div>
-  )
+    <>
+      {/* <div className="card"> */}
+      {/* Card componenet */}
+
+      <div className="card">
+        <img src={props.image} alt="t-shirt" className="filler-image" />
+        <p>{props.title}</p>
+        <p>{props.description}</p>
+        <p>{props.price}</p>
+      </div>
+
+      {/* </div> */}
+    </>
+  );
 }
 
-export default Card
+export default Card;

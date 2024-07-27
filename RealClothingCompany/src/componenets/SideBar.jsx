@@ -1,21 +1,38 @@
 import React from "react";
-
+import API from "../utils/API";
+import { useState } from "react";
 function SideBar() {
-    return (
-        <div className="sidebar-container">
-            <ul>
-                <li>Shirts</li>
-                <li>SweatShirts</li>
-                <li>Pants</li>
-                <li>Caps</li>
-            </ul>
-            <hr className="line" />
-            <ul>
-                <li>Color</li>
-                <li>Shop by Price</li>
-            </ul>
-        </div>
-    );
-}
+  const [itemId, setItemId] = useState("");
 
+  function handleClick(event) {
+    console.log(event.target.id);
+
+    // setItemId(event.target.id);
+    // console.log(itemId);
+    API(event.target.id);
+  }
+  return (
+    <div className="sidebar-container">
+      <ul>
+        <li id="men's clothing" onClick={handleClick}>
+          men's clothing
+        </li>
+        <li id="jewelery" onClick={handleClick}>
+          jewelery
+        </li>
+        <li id="electronics" onClick={handleClick}>
+          electronics
+        </li>
+        <li id="women's clothing" onClick={handleClick}>
+          women's clothing
+        </li>
+      </ul>
+      <hr className="line" />
+      <ul>
+        <li>Color</li>
+        <li>Shop by Price</li>
+      </ul>
+    </div>
+  );
+}
 export default SideBar;

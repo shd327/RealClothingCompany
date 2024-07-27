@@ -1,76 +1,36 @@
 import React from "react";
-
+import Card from "./Card";
+import { useState, useEffect } from "react";
+import axios from "axios";
 function ProductDisplay() {
-    return (
-        <div className="display-container">
-            <div className="card">
-                {/* Card componenet */}
-                <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/2/24/Blue_Tshirt.jpg"
-                    alt="t-shirt"
-                    className="filler-image"
-                />
-                <p>Product Name</p>
-                <p>Product Description</p>
-                <p>Product Price</p>
-            </div>
-            <div className="card">
-                {/* Card componenet */}
-                <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/2/24/Blue_Tshirt.jpg"
-                    alt="t-shirt"
-                    className="filler-image"
-                />
-                <p>Product Name</p>
-                <p>Product Description</p>
-                <p>Product Price</p>
-            </div>
-            <div className="card">
-                {/* Card componenet */}
-                <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/2/24/Blue_Tshirt.jpg"
-                    alt="t-shirt"
-                    className="filler-image"
-                />
-                <p>Product Name</p>
-                <p>Product Description</p>
-                <p>Product Price</p>
-            </div>
-            <div className="card">
-                {/* Card componenet */}
-                <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/2/24/Blue_Tshirt.jpg"
-                    alt="t-shirt"
-                    className="filler-image"
-                />
-                <p>Product Name</p>
-                <p>Product Description</p>
-                <p>Product Price</p>
-            </div>
-            <div className="card">
-                {/* Card componenet */}
-                <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/2/24/Blue_Tshirt.jpg"
-                    alt="t-shirt"
-                    className="filler-image"
-                />
-                <p>Product Name</p>
-                <p>Product Description</p>
-                <p>Product Price</p>
-            </div>
-            <div className="card">
-                {/* Card componenet */}
-                <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/2/24/Blue_Tshirt.jpg"
-                    alt="t-shirt"
-                    className="filler-image"
-                />
-                <p>Product Name</p>
-                <p>Product Description</p>
-                <p>Product Price</p>
-            </div>
-        </div>
-    );
+  const [items, setItems] = useState([]);
+  useEffect(() => {
+    axios
+      .get("https://fakestoreapi.com/products")
+      .then((res) => {
+        setItems(res.data);
+        // console.log(res.data.category);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+  items.map((item) => {
+    console.log(item.category);
+  });
+  return (
+    <>
+      {items.map((item) => (
+        <Card
+          key={item.id}
+          title={item.title}
+          description={item.description}
+          price={item.price}
+          image={item.image}
+        />
+      ))}
+    </>
+  );
 }
 
 export default ProductDisplay;
