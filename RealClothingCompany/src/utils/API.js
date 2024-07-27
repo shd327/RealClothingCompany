@@ -17,7 +17,18 @@ import axios from "axios";
 // }
 // export default API;
 
-const API = async (itemId) => {
+const APILoad = async (itemId) => {
+  console.log("made it to API");
+  console.log(itemId);
+
+  const response = await fetch(`https://fakestoreapi.com/products/`);
+  const data = await response.json();
+
+  console.log(data);
+  return data;
+};
+
+const APICat = async (itemId) => {
   console.log("made it to API");
   console.log(itemId);
 
@@ -25,6 +36,9 @@ const API = async (itemId) => {
     `https://fakestoreapi.com/products/category/${itemId}`
   );
   const data = await response.json();
-  console.log(data);
+
+  //   console.log(data);
+  return data;
 };
-export default API;
+
+export { APILoad, APICat };

@@ -2,22 +2,29 @@ import React from "react";
 import Card from "./Card";
 import { useState, useEffect } from "react";
 import axios from "axios";
-function ProductDisplay() {
+import { APILoad } from "../utils/API";
+function ProductDisplay(category) {
   const [items, setItems] = useState([]);
+  //   useEffect(() => {
+  //     axios
+  //       .get("https://fakestoreapi.com/products")
+  //       .then((res) => {
+  //         setItems(res.data);
+  //         // console.log(res.data.category);
+  //       })
+  //       .catch((err) => {
+  //         console.log(err);
+  //       });
+  //   }, []);
+  //   items.map((item) => {
+  //     console.log(item.category);
+  //   });
   useEffect(() => {
-    axios
-      .get("https://fakestoreapi.com/products")
-      .then((res) => {
-        setItems(res.data);
-        // console.log(res.data.category);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    APILoad().then((data) => {
+      setItems(data);
+    });
   }, []);
-  items.map((item) => {
-    console.log(item.category);
-  });
+  console.log(category);
   return (
     <>
       {items.map((item) => (

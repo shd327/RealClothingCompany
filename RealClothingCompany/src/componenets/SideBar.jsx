@@ -1,6 +1,7 @@
 import React from "react";
-import API from "../utils/API";
+import { APICat, APILoad } from "../utils/API";
 import { useState } from "react";
+import ProductDisplay from "./ProductDisplay";
 function SideBar() {
   const [itemId, setItemId] = useState("");
 
@@ -9,7 +10,9 @@ function SideBar() {
 
     // setItemId(event.target.id);
     // console.log(itemId);
-    API(event.target.id);
+    const data = APICat(event.target.id);
+    // <ProductDisplay category={data} />;
+    console.log(data);
   }
   return (
     <div className="sidebar-container">
